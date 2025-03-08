@@ -35,6 +35,7 @@ jobs:
       # 进入MTPwn源代码目录并编译
       run: |
         cd MTPwn-0.1
+        ls
         make
     - name: Run MTPwn
       # 进入MTPwn源代码目录并编译
