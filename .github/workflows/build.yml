@@ -43,7 +43,6 @@ jobs:
         cd MTPwn-0.1
         ls
         tar -czvf mtpwn.tar.gz .
-        working-directory: MTPwn-0.1
 
 
 
