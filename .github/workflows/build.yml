@@ -43,6 +43,7 @@ jobs:
         cd MTPwn-0.1
         ls
         mkdir dt
+        cp mtpwn ./dt
 
 
 
