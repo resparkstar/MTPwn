@@ -1,4 +1,4 @@
-name: CI
+name: build mtpwn
 
 # 定义触发工作流的事件
 on:
@@ -36,6 +36,32 @@ jobs:
       run: |
         cd MTPwn-0.1
         make
+
+        
+
+             # 创建 Release
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        
+        tag_name: ${{ env.version }}
+        release_name: v${{ env.version }
+        draft: false
+        prerelease: false
+
+    # 上传编译好的文件
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: MTPwn-0.1/mtpwn  # 修改为实际编译输出的文件路径
+        asset_name: mtpwn-binary  # 修改为希望上传的文件名
+        
 
     # 可以在这里添加更多步骤，比如运行测试或上传构建产物
     # - name: Run tests
