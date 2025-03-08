@@ -42,7 +42,6 @@ jobs:
       run: |
         cd MTPwn-0.1
         ls
-        tar -czvf mtpwn.tar.gz .
 
 
 
