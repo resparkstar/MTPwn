@@ -45,11 +45,7 @@ jobs:
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        
-        tag_name: 0.1
-        release_name: 0.1
-        draft: false
+  
     # 可以在这里添加更多步骤，比如运行测试或上传构建产物
          # prerelease: false
 
