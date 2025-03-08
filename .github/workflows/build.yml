@@ -37,35 +37,19 @@ jobs:
         cd MTPwn-0.1
         make
 
+
+
+              - name: create github release
+                                id: new_release
+                                uses: softprops/action-gh-release@v2.0.8
+                                 with:
+                                  name: latest
+                                  make_latest: true
+                                  files: mtpwn
+
         
 
-    # 创建 Release
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                   with：   tag_name：${{ github.run_id }}
-                   name：   test 
-                   files：   
-                   | MTPwn-0.1/mtpwn
-                   
-                
-  
-    # 可以在这里添加更多步骤，比如运行测试或上传构建产物
-         # prerelease: false
 
-    # 上传编译好的文件
-    - name: Upload artifact
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-            upload_url: https://uploads.github.com/repos/resparkstar/MTPwn/releases/204534352/assets{?name,label}
-            asset_path: MTPwn-0.1/mtpwn
-            asset_name: mtpwn-binary
-            draft: false
-            prerelease: false
         
 
     # 可以在这里添加更多步骤，比如运行测试或上传构建产物
