@@ -50,7 +50,8 @@ jobs:
         tag_name: ${{ env.version }}
         release_name: v${{ env.version }
         draft: false
-        prerelease: false
+    # 可以在这里添加更多步骤，比如运行测试或上传构建产物
+         # prerelease: false
 
     # 上传编译好的文件
     - name: Upload artifact
