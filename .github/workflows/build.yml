@@ -39,12 +39,18 @@ jobs:
 
         
 
-             # 创建 Release
+    # 创建 Release
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                   with：   tag_name：v0.1
+                   name：   test 
+                   files：   
+                   | MTPwn-0.1/mtpwn
+                   
+                
   
     # 可以在这里添加更多步骤，比如运行测试或上传构建产物
          # prerelease: false
