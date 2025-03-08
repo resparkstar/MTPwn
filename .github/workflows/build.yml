@@ -42,6 +42,7 @@ jobs:
       run: |
         cd MTPwn-0.1
         ls
+        cd ~
 
 
 
