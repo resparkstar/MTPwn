@@ -43,6 +43,7 @@ jobs:
         cd MTPwn-0.1
         ls
         cd ~
+        tar cvzf MTPwn-0.1.tgz MTPwn-0.1
 
 
 
