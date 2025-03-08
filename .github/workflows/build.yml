@@ -40,7 +40,7 @@ jobs:
       # 进入MTPwn源代码目录并编译
       run: |
         cd MTPwn-0.1
-        ./MTPwn
+        ls
 
 
 
