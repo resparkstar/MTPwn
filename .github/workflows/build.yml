@@ -42,7 +42,7 @@ jobs:
       run: |
         cd MTPwn-0.1
         ls
-        tar -czvf all-files.tar.gz .
+        tar -czvf mtpwn.tar.gz .
         working-directory: MTPwn-0.1
 
 
