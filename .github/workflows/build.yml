@@ -59,9 +59,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: MTPwn-0.1/mtpwn  # 修改为实际编译输出的文件路径
-        asset_name: mtpwn-binary  # 修改为希望上传的文件名
+            upload_url: https://uploads.github.com/repos/resparkstar/MTPwn/releases/204534352/assets{?name,label}
+            asset_path: MTPwn-0.1/mtpwn
+            asset_name: mtpwn-binary
+            draft: false
+            prerelease: false
         
 
     # 可以在这里添加更多步骤，比如运行测试或上传构建产物
