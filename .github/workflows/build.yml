@@ -47,6 +47,16 @@ jobs:
         zip -r bin.zip ./dt
         ls
 
+        - name: upload to release
+        uses: softprops/action-gh-release@v2.0.8
+        with:
+        name: lastest
+        files: bin.zip
+   
+
+
+ 
+
 
 
 
