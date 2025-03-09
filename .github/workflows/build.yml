@@ -45,6 +45,7 @@ jobs:
         mkdir dt
         cp mtpwn ./dt
         zip -r bin.zip ./dt
+        cd dt
         ls
 
 
