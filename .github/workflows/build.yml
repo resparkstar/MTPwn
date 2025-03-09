@@ -55,8 +55,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 必须设置这个环境变量来授权
       with:
-        tag_name: ${{ github.ref }} # 使用触发事件的标签名作为发布版本号
-        release_name: Release ${{ github.ref }} # 发布名称，可以根据需要自定义
+        tag_name: ${{ github.run_id }} # 使用触发事件的标签名作为发布版本号
+        release_name: Release ${{ github.run_id }} # 发布名称，可以根据需要自定义
         draft: false # 是否设置为草稿状态
         prerelease: false # 是否设置为预发布状态
 
