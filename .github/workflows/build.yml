@@ -47,14 +47,7 @@ jobs:
         zip -r bin.zip ./dt
         cd dt
         ls
-        uses: softprops/action-gh-release@v1
-        with: files: |
-        ./bin.zip
-        name: TWRP_Device_Tree-${{ github.run_id }}
-        tag_name: ${{ github.run_id }}
-        body: samsung
-        env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
              
 
 
