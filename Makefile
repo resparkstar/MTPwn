@@ -22,7 +22,8 @@
 #
 
 CC=gcc
-CFLAGS=-Wall -pedantic -std=gnu90 -O2 \
+CFLAGS= -Wall -g -m32
+        -Wall -pedantic -std=gnu90 -O2 \
        -fstack-protector --param=ssp-buffer-size=4 \
        -Wformat -Werror=format-security -fPIE
 LDFLAGS=-lmtp -pie -s
