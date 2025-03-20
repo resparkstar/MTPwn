@@ -1,4 +1,4 @@
-name: build mtpwn
+name: 32-bit mtpwn
 
 # 定义触发工作流的事件
 on:
