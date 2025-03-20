@@ -23,8 +23,7 @@ jobs:
 
     - name: Set up dependencies
       # 安装必要的依赖，如libmtp-dev
-      run: sudo dpkg --add-architecture i386
-           sudo apt-get update && sudo apt-get install -y libmtp-dev gcc-multilib g++-multilib
+      run: sudo apt-get update && sudo apt-get install -y libmtp-dev gcc-multilib g++-multilib
 
 
     - name: Download and extract MTPwn sources
