@@ -31,7 +31,7 @@ LDFLAGS=-lmtp -pie -s
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 mtpwn: mtpwn.o
-	gcc -o $@ $< $(LDFLAGS)
+	gcc -o $@ $< $(LDFLAGS) -m32
 
 mtpwn.pdf: README.rst
 	rst2pdf $< -o $@
