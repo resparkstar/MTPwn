@@ -4,10 +4,10 @@ name: 32-bit mtpwn p1
 on:
   # 每次推送代码到仓库时触发
   push:
-    branches: [ "master" ]
+    branches: [ "p1-1" ]
   # 每次拉取请求创建或更新时触发
   pull_request:
-    branches: [ "master" ]
+    branches: [ "p1-1" ]
 
 # 工作流配置
 jobs:
