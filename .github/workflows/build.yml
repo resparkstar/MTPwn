@@ -30,6 +30,7 @@ jobs:
         curl -L "https://github.com/resparkstar/MTPwn/blob/p1/MTPwn.zip" -o mtpwn.zip
         cp mtpwn.zip ~/md/mtpwn.zip
         cd ~/md
+        unzip mtpwn.zip
         ls
         
 
