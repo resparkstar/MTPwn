@@ -28,9 +28,13 @@ jobs:
       run: |
         mkdir ~/md
         curl -L "https://github.com/resparkstar/MTPwn/blob/p1/Makefile" -o Makefile
+        curl -L "https://github.com/resparkstar/MTPwn/blob/p1/LICENSE" -o LICENSE 
+        curl -L "https://github.com/resparkstar/MTPwn/blob/p1/README.rst" -o README.rst
         curl -L "https://github.com/resparkstar/MTPwn/blob/p1/mtpwn.c" -o mtpwn.c 
         cp Makefile ~/md/Makefile
         cp mtpwn.c ~/md/mtpwn.c
+        cp README.rst ~/md/README.rst
+        cp LICENSE ~/md/LICENSE
         cd ~/md
         ls
 
@@ -38,6 +42,7 @@ jobs:
       # 进入MTPwn源代码目录并编译
       run: |
         cd ~/md
+        make
         ls
     - name: Run MTPwn
       # 进入MTPwn源代码目录并编译
