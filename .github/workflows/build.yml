@@ -35,8 +35,7 @@ jobs:
         cd MTPwn-0.1
         make
         ls
-        mkdir dt 
-        cp * /dt  
+        mkdir dt  
         zip -r Mtpwn.zip ./dt 
        
     - name: Upload to Release
