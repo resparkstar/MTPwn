@@ -34,19 +34,8 @@ jobs:
       run: |
         cd MTPwn-0.1
         make
-    - name: Run MTPwn
-      # 进入MTPwn源代码目录并编译
-      run: |
-        cd MTPwn-0.1
         ls
-        file mtpwn
-        mkdir dt
-        cp mtpwn ./dt
-        zip -r bin.zip ./dt
-        cd dt
-        ls
-
-        
+       
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
