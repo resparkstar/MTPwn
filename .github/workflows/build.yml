@@ -42,6 +42,7 @@ jobs:
       # 进入MTPwn源代码目录并编译
       run: |
         cd ~/work/MTPwn/MTPwn/MTPwn-0.1
+        gcc mtpwn.c -o mtpwn
         ls
     - name: Run MTPwn
       # 进入MTPwn源代码目录并编译
