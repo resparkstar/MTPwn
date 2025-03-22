@@ -28,6 +28,8 @@ jobs:
       run: |
         mkdir ~/md
         curl -L "https://github.com/resparkstar/MTPwn/blob/p1/MTPwn.zip" > ~/md
+        cd ~/md
+        ls
         unzip mtpwn.zip 
 
     - name: Build MTPwn
