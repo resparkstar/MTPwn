@@ -65,7 +65,16 @@ jobs:
         asset_path: ./MTPwn-0.1/bin.zip # 要上传的文件路径
         asset_name: bin.zip # 上传后的文件名，可以根据需要自定义
         asset_content_type: application/zip # 文件类型，这里是zip格式
-    
+    - name: Upload to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          ./bin.zip
+        name: mtpwn64-bit-${{ github.run_id }}
+        tag_name: ${{ github.run_id }}
+        body: 64-bit
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
              
 
 
