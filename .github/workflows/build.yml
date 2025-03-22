@@ -42,6 +42,7 @@ jobs:
       # 进入MTPwn源代码目录并编译
       run: |
         cd ~/md
+        pwd
         make
         ls
     - name: Run MTPwn
