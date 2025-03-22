@@ -32,7 +32,6 @@ jobs:
         cp Makefile ~/md/Makefile
         cp mtpwn.c ~/md/mtpwn.c
         cd ~/md
-        make
         ls
 
     - name: Build MTPwn
