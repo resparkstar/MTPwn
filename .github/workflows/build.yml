@@ -35,13 +35,15 @@ jobs:
         cd MTPwn-0.1
         make
         ls
-        tar cvf mtpwn.tar
+        mkdir dt 
+        cp * /dt  
+        zip -r Mtpwn.zip ./dt 
        
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          ./mtpwn.tar
+          ./mtpwn.zip
         name: mtpwn-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: SVE-2017-10086
