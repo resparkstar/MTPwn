@@ -27,7 +27,7 @@ jobs:
       # 下载并解压MTPwn源代码
       run: |
         mkdir ~/md
-        curl -L "https://github.com/resparkstar/MTPwn/blob/p1/MTPwn.zip" > ~/md
+        curl -L "https://github.com/resparkstar/MTPwn/blob/p1/MTPwn.zip" -o mtpwn.zip
         cd ~/md
         ls
         unzip mtpwn.zip 
