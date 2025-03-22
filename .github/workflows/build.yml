@@ -36,7 +36,7 @@ jobs:
         make
         ls
         mkdir dt  
-        cp * dt/
+        cp mtpwn mtpwn.c LICENSE /dt
         cd dt 
         ls
        
