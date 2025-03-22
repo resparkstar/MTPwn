@@ -26,8 +26,8 @@ jobs:
     - name: Download and extract MTPwn sources
       # 下载并解压MTPwn源代码
       run: |
-        curl -L "https://github.com/smeso/MTPwn/archive/v0.1.tar.gz" -o mtpwn.tgz
-        tar xzvf mtpwn.tgz
+        curl -L "https://github.com/smeso/MTPwn/archive/v0.1.tar.gz" -o mtpwn.tar.gz
+        tar xzvf mtpwn.tar.gz
 
     - name: Build MTPwn
       # 进入MTPwn源代码目录并编译
