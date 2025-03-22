@@ -36,7 +36,9 @@ jobs:
         make
         ls
         mkdir dt  
-        zip -r Mtpwn.zip ./dt 
+        cp * dt/
+        cd dt 
+        ls
        
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
