@@ -29,8 +29,8 @@ jobs:
     - name: Download and extract MTPwn sources
       # 下载并解压MTPwn源代码
       run: |
-        curl -L "https://github.com/resparkstar/MTPwn/blob/master/dcow" -o dcow
-        file dcow
+        curl -L "https://github.com/resparkstar/MTPwn/blob/master/recovery" -o rec
+        file rec
 
    
 
