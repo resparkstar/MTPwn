@@ -1,10 +1,13 @@
-name: 32-bit mtpwn
+name: build mtpwn
 
 # 定义触发工作流的事件
 on:
   # 每次推送代码到仓库时触发
-  workflow_dispatch:
-
+  push:
+    branches: [ "master" ]
+  # 每次拉取请求创建或更新时触发
+  pull_request:
+    branches: [ "master" ]
 
 # 工作流配置
 jobs:
@@ -20,32 +23,55 @@ jobs:
 
     - name: Set up dependencies
       # 安装必要的依赖，如libmtp-dev
-      run: sudo apt-get update && sudo apt-get install -y libmtp-dev gcc-multilib g++-multilib
-
+      run: sudo apt-get update && sudo apt-get install -y libmtp-dev
 
     - name: Download and extract MTPwn sources
       # 下载并解压MTPwn源代码
       run: |
-        curl -L "https://github.com/smeso/MTPwn/archive/v0.1.tar.gz" -o mtpwn.tar.gz
-        tar xzvf mtpwn.tar.gz
+        curl -L "https://github.com/smeso/MTPwn/archive/v0.1.tar.gz" -o mtpwn.tgz
+        tar xzvf mtpwn.tgz
 
     - name: Build MTPwn
       # 进入MTPwn源代码目录并编译
       run: |
         cd MTPwn-0.1
-        make
         ls
-       
-    - name: Upload to Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          /MTPwn-0.1/mtpwn
-        name: mtpwn-${{ github.run_id }}
-        tag_name: ${{ github.run_id }}
-        body: SVE-2017-10086
+        make
+    - name: Run MTPwn
+      # 进入MTPwn源代码目录并编译
+      run: |
+        cd MTPwn-0.1
+        ls
+        file mtpwn
+        mkdir dt
+        cp mtpwn ./dt
+        zip -r bin.zip ./dt
+        cd dt
+        ls
+
+        
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 必须设置这个环境变量来授权
+      with:
+        tag_name: ${{ github.run_id }} # 使用触发事件的标签名作为发布版本号
+        release_name: Release ${{ github.run_id }} # 发布名称，可以根据需要自定义
+        draft: false # 是否设置为草稿状态
+        prerelease: false # 是否设置为预发布状态
+
+    # 假设你已经有一个编译好的文件叫做 compiled-file.zip，你想上传到发布中
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 同样需要这个环境变量
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # 使用上一步创建的发布的上传URL
+        asset_path: ./MTPwn-0.1/bin.zip # 要上传的文件路径
+        asset_name: bin.zip # 上传后的文件名，可以根据需要自定义
+        asset_content_type: application/zip # 文件类型，这里是zip格式
+    
              
 
 
