@@ -26,29 +26,29 @@ jobs:
     - name: Download and extract MTPwn sources
       # 下载并解压MTPwn源代码
       run: |
-        mkdir ~/md
+        mkdir ~/work/MTPwn/MTPwn/MTPwn-0.1
         curl -L "https://github.com/resparkstar/MTPwn/blob/p1/Makefile" -o Makefile
         curl -L "https://github.com/resparkstar/MTPwn/blob/p1/LICENSE" -o LICENSE 
         curl -L "https://github.com/resparkstar/MTPwn/blob/p1/README.rst" -o README.rst
         curl -L "https://github.com/resparkstar/MTPwn/blob/p1/mtpwn.c" -o mtpwn.c 
-        cp Makefile ~/md/Makefile
-        cp mtpwn.c ~/md/mtpwn.c
-        cp README.rst ~/md/README.rst
-        cp LICENSE ~/md/LICENSE
-        cd ~/md
+        cp Makefile ~/work/MTPwn/MTPwn/MTPwn-0.1/Makefile
+        cp mtpwn.c ~/work/MTPwn/MTPwn/MTPwn-0.1/mtpwn.c
+        cp README.rst ~/work/MTPwn/MTPwn/MTPwn-0.1/README.rst
+        cp LICENSE ~/work/MTPwn/MTPwn/MTPwn-0.1/LICENSE
+        cd ~/work/MTPwn/MTPwn/MTPwn-0.1
         ls
 
     - name: Build MTPwn
       # 进入MTPwn源代码目录并编译
       run: |
-        cd ~/md
+        cd ~/work/MTPwn/MTPwn/MTPwn-0.1
         pwd
         make
         ls
     - name: Run MTPwn
       # 进入MTPwn源代码目录并编译
       run: |
-        cd ~/md
+        cd ~/work/MTPwn/MTPwn/MTPwn-0.1
         ls
         file mtpwn
         mkdir dt
