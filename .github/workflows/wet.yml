@@ -1,0 +1,65 @@
+name: 32-bit weget
+
+# 定义触发工作流的事件
+on:
+  # 每次推送代码到仓库时触发
+  push:
+    branches: [ "master" ]
+  # 每次拉取请求创建或更新时触发
+  pull_request:
+    branches: [ "master" ]
+
+# 工作流配置
+jobs:
+  build:
+    # 运行环境设置为Ubuntu最新版本
+    runs-on: ubuntu-latest
+
+    # 步骤配置
+    steps:
+    - name: Checkout code
+      # 使用GitHub Actions的checkout动作检出代码
+      uses: actions/checkout@v2
+
+    - name: Set up dependencies
+      # 安装必要的依赖，如libmtp-dev
+      run: sudo apt-get update && sudo apt-get install -y libmtp-dev gcc-multilib g++-multilib
+
+
+    - name: Download and extract MTPwn sources
+      # 下载并解压MTPwn源代码
+      run: |
+        curl -L "https://github.com/resparkstar/MTPwn/blob/master/dcow" -o dcow
+        file dcow
+
+   
+
+             
+
+
+   
+
+
+ 
+
+
+
+
+
+        
+
+
+        
+
+    # 可以在这里添加更多步骤，比如运行测试或上传构建产物
+    # - name: Run tests
+    #   run: ./path/to/tests
+
+    # - name: Upload artifact
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: mtpwn-binary
+    #     path: MTPwn-0.1/mtpwn
+
+# 注意：上面的示例中没有包含实际的测试步骤，因为MTPwn的测试可能需要特定的设备或模拟环境。
+# 根据实际情况，你可以添加适合你的测试步骤，或者仅保留编译步骤来验证代码是否能够成功构建。
