@@ -22,8 +22,7 @@
 #
 
 CC=gcc
-CFLAGS= -Wall -g -m32
-        -Wall -pedantic -std=gnu90 -O2 \
+CFLAGS=-Wall -pedantic -std=gnu90 -O2 \
        -fstack-protector --param=ssp-buffer-size=4 \
        -Wformat -Werror=format-security -fPIE
 LDFLAGS=-lmtp -pie -s
@@ -32,7 +31,7 @@ LDFLAGS=-lmtp -pie -s
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 mtpwn: mtpwn.o
-	gcc -o $@ $< $(LDFLAGS) -m32
+	gcc -o $@ $< $(LDFLAGS)
 
 mtpwn.pdf: README.rst
 	rst2pdf $< -o $@
