@@ -31,7 +31,7 @@ jobs:
         cp mtpwn.zip ~/md/mtpwn.zip
         cd ~/md
         ls
-        
+        unzip mtpwn.zip
 
     - name: Build MTPwn
       # 进入MTPwn源代码目录并编译
