@@ -41,7 +41,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          /MTPwn-0.1/mtpwn
+          /home/runner/work/MTPwn/MTPwn/MTPwn-0.1/mtpwn
         name: mtpwn-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: SVE-2017-10086
