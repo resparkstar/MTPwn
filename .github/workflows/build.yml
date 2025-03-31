@@ -26,31 +26,11 @@ jobs:
     - name: Download and extract MTPwn sources
       # 下载并解压MTPwn源代码
       run: |
-        curl  -L  "https://github.com/smeso/MTPwn/archive/v0.1.tar.gz" -o mtpwn.tar.gz
+        curl  -L  "https://github.com/resparkstar/MTPwn/releases/download/14052400809/mtpwn.tar.gz" -o mtpwn.tar.gz
+        cd ~/work/mtpwn/mtpwn
         tar xzvf mtpwn.tar.gz
 
-    - name: Build MTPwn
-      # 进入MTPwn源代码目录并编译
-      run: |
-        cd MTPwn-0.1
-        make
-        pwd
-        ls
-       
-    - name: Upload to Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          /home/runner/work/MTPwn/MTPwn/MTPwn-0.1/mtpwn
-        name: mtpwn-${{ github.run_id }}
-        tag_name: ${{ github.run_id }}
-        body: SVE-2017-10086
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-             
-
-
-   
+  
 
 
  
