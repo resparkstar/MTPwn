@@ -35,6 +35,18 @@ jobs:
       run: |
         cd /home/runner/work/MTPwn/MTPwn
         make
+
+    - name: Upload to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          /home/runner/work/MTPwn/MTPwn/mtpwn
+        name: mtpwn-${{ github.run_id }}
+        tag_name: ${{ github.run_id }}
+        body: SVE-2017-10086
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+             
         
        
     
