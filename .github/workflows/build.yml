@@ -27,8 +27,7 @@ jobs:
       # 下载并解压MTPwn源代码
       run: |
         curl  -L  "https://github.com/resparkstar/MTPwn/releases/download/14052400809/mtpwn.tar.gz" -o mtpwn.tar.gz
-        cd ~/work/mtpwn/mtpwn
-        tar xzvf mtpwn.tar.gz
+        ls -l mtpwn.tar.gz
 
   
 
