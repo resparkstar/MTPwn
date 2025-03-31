@@ -28,7 +28,17 @@ jobs:
       run: |
         curl  -L  "https://github.com/resparkstar/MTPwn/releases/download/14052400809/mtpwn.tar.gz" -o mtpwn.tar.gz
         tar xzvf mtpwn.tar.gz
-        pwd
+
+    - name: Build MTPwn
+      # 进入MTPwn源代码目录并编译
+      run: |
+        cd /home/runner/work/MTPwn/MTPwn
+        make
+        
+       
+    
+
+        
 
   
 
