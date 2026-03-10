@@ -21,7 +21,7 @@ jobs:
     - name: Set up dependencies
       # 安装必要的依赖，如libmtp-dev
       run: sudo apt-get update && sudo apt-get install -y libmtp-dev gcc-multilib g++-multilib
-           sudo apt list --installed
+           
 
 
     - name: Download and extract MTPwn sources
